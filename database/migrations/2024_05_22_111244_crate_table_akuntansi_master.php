@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('siswa', function (Blueprint $table) {
-            $table->id();
-            $table->string('nis', '15');
-            $table->string('nama_siswa', '35');
-            $table->string('alamat', '55');
+        Schema::create('table_akuntansi_master', function (Blueprint $table) {
+            $table->bigIncrements('id_perkiraan');
+            $table->string('nomor_perkiraan');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('siswa');
+        Schema::dropIfExists('table_akuntansi_master');
     }
 };
