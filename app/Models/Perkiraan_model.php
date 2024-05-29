@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Perkiraan_model extends Model
 {
     use HasFactory;
-    protected $table="tabel_akuntansi_master";
-    protected $primaryKey="id_perkiraan";
+    protected $table="perkiraan";
+    protected $primaryKey="PerkiraanID";
 
     public $timestamps = false;
 

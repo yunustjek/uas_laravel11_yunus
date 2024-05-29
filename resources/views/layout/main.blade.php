@@ -26,7 +26,7 @@
 
 
                 <li class="nav-item">
-                <a class="nav-link {{ request()->segment('1') =='perkiraan'  ? 'active' : '' }}" aria-current="page" href="{{ route('perkiraan') }}">
+                <a class="nav-link {{ request()->segment('1') =='perkiraan'  ? 'active' : '' }}" aria-current="page" href="{{ asset('perkiraan') }}">
                 <i class="fas fa-user"></i> Perkiraan</a>
                 </li>
 

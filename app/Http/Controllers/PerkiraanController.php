@@ -23,10 +23,11 @@ class PerkiraanController extends Controller
 
     public function store(Request $request)
     {
-       $p = new Perkiraan_model();
-       $p->nomor_perkiraan = $request->nomor_perkiraan;
-       $p->nama_perkiraan = $request->nama_perkiraan;
-       $p->save();
+       $perkiraan = new Perkiraan_model();
+       $perkiraan->NomorPerkiraan = $request->NomorPerkiraan;
+       $perkiraan->NamaPerkiraan = $request->NamaPerkiraan;
+       $perkiraan->Tipe = $request->Tipe;
+       $perkiraan->save();
        return redirect('perkiraan'); 
     }
 
@@ -38,17 +39,25 @@ class PerkiraanController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $perkiraan = Perkiraan_model::find($id);
+        return view ('admin/perkiraan/edit', compact('perkiraan'));
     }
 
 
     public function update(Request $request, string $id)
     {
-        //
+       $perkiraan = Perkiraan_model::find($id);
+       $perkiraan->NomorPerkiraan = $request->NomorPerkiraan;
+       $perkiraan->NamaPerkiraan = $request->NamaPerkiraan;
+       $perkiraan->Tipe = $request->Tipe;
+       $perkiraan->save();
+       return redirect('perkiraan'); 
     }
 
     public function destroy(string $id)
     {
-        //
+        $perkiraan = Perkiraan_model::find($id);
+        $perkiraan->delete();
+        return redirect('perkiraan')->with(' berhasil');
     }
 }
