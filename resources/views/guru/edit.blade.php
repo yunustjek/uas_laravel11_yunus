@@ -1,7 +1,7 @@
 @extends('layout.main')
 @section('content')
 
-<h3>Edit Data</h3>
+<h31>Edit Data</h3>
 <div class="card">
   <div class="card-header">
     <button type="button" class="btn btn-sm btn-success" 
@@ -74,6 +74,7 @@
             </div>
           
             <button type="submit" class="btn btn-sm btn-success">Simpan</button>
+            <a class="btn btn-sm btn-danger" href="{{ url()->previous() }}" >Back</a>
           </form>
     </div>
 </div>
