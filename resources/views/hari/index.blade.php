@@ -13,6 +13,7 @@
         <thead>
         <td>No</td>
         <td>Nama Hari</td>
+        {{-- <td>Icon</td> --}}
         <td>Aksi</td>
     </tr>
 </thead>
@@ -21,6 +22,7 @@
     <tr>
         <td>{{ $loop->iteration }}</td>
         <td>{{ $item->NamaHari }}</td>
+        {{-- <td><img src="{{ asset('storage/img/' . $item->img) }}" alt="" width="5%"></td> --}}
         <td>
             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('hari.destroy', $item->HariID) }}" method="POST">
                 <a href="{{ route('hari.show', $item->HariID) }}" class="btn btn-sm btn-dark">SHOW</a>

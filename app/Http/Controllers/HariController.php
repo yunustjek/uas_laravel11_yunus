@@ -20,16 +20,16 @@ class HariController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'img'        => 'required|image|mimes:jpeg,jpg,png|max:2048',
-            'NamaHari'   => 'required'
-        ]);
-        $image = $request->file('img');
-        $image->storeAs('public/img', $image->hashName());
+        // $request->validate([
+        //     'img'        => 'required|image|mimes:jpeg,jpg,png|max:2048',
+        //     'NamaHari'   => 'required'
+        // ]);
+        // $image = $request->file('img');
+        // $image->storeAs('public/img', $image->hashName());
 
         $hari = new Hari_model();
         $hari->NamaHari = $request->NamaHari;
-        $hari->img      = $image->hashName();
+        // $hari->img      = $image->hashName();
         $hari->save();
         return redirect('hari');
     }
