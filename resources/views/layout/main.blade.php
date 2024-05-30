@@ -24,7 +24,11 @@
                 <i class="fas fa-tachometer-alt"></i> Home</a>
                 </li>
 
-
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->segment('1') =='hari'  ? 'active' : '' }}" aria-current="page" href="{{ route('hari.index') }}">
+                    <i class="fas fa-user"></i> Hari</a>
+                    </li>
+    
                 
                 <li class="nav-item">
                 <a class="nav-link {{ request()->segment('1') =='guru'  ? 'active' : '' }}" aria-current="page" href="{{ url('guru') }}">
