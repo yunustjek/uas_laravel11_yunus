@@ -2,8 +2,13 @@
 @section('content')
 
 <h1>Master Hari</h1>
-<a href="{{ route('hari.create') }}" class="btn btn-success btn-sm">Tambah Data</a>
-<table class="table bordered table-sm">
+<div class="card">
+    <div class="card-header">
+        <a href="{{ route('hari.create') }}" class="btn btn-success btn-sm">Tambah Data</a>
+    </div>
+
+<div class="card-body">
+<table class="table table-sm table-stripped table-bordered">
     <tr>
         <thead>
         <td>No</td>
@@ -55,4 +60,6 @@
 
 </tbody>
 </table>
+</div>
+</div>
 @endsection
