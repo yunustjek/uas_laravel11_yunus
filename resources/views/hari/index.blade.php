@@ -16,9 +16,43 @@
     <tr>
         <td>{{ $loop->iteration }}</td>
         <td>{{ $item->NamaHari }}</td>
-        <td><a href="" class="btn btn-warning btn-sm">Edit</a></td>
+        <td>
+            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('hari.destroy', $item->HariID) }}" method="POST">
+                <a href="{{ route('hari.show', $item->HariID) }}" class="btn btn-sm btn-dark">SHOW</a>
+                <a href="{{ route('hari.edit', $item->HariID) }}" class="btn btn-sm btn-primary">EDIT</a>
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
+            </form>
+        </td>
     </tr>
 @endforeach
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    //message with sweetalert
+    @if(session('success'))
+        Swal.fire({
+            icon: "success",
+            title: "BERHASIL",
+            text: "{{ session('success') }}",
+            showConfirmButton: false,
+            timer: 2000
+        });
+    @elseif(session('error'))
+        Swal.fire({
+            icon: "error",
+            title: "GAGAL!",
+            text: "{{ session('error') }}",
+            showConfirmButton: false,
+            timer: 2000
+        });
+    @endif
+
+</script>
+
 </tbody>
 </table>
 @endsection
