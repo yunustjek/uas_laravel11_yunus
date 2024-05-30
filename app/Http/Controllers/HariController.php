@@ -29,7 +29,10 @@ class HariController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $hari = new Hari_model();
+        $hari->NamaHari = $request->NamaHari;
+        $hari->save();
+        return redirect('hari');
     }
 
     /**

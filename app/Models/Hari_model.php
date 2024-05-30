@@ -11,5 +11,5 @@ class Hari_model extends Model
 
      protected $table="hari";
      protected $primaryKey="HariID";
-     public $timestamps="False";
+     public $timestamps = false;
 }
