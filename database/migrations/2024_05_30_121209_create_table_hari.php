@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('hari', function (Blueprint $table) {
          $table->increments('HariID');
          $table->string('NamaHari');
-         $table->string('img');
+         $table->string('img')->default('default.jpg');
         });
     }
 
