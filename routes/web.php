@@ -11,11 +11,11 @@ use App\Http\Controllers\PerkiraanController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/',[SiswaController::class, 'index'])->name('siswa.index');
+// Route::get('/',[SiswaController::class, 'index'])->name('siswa.index');
 Route::resource('gallery', GalleryController::class);
 
 Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
@@ -47,3 +47,14 @@ Route::get('jadwal', [JadwalController::class, 'index'])->name('jadwal.index');
 Route::resource('perkiraan', PerkiraanController::class);
 
 Route::resource('hari', HariController::class);
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
