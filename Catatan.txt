@@ -1,0 +1,4 @@
+php artisan make:controller HariController --resource
+php artisan make:migration create_table_hari --create=hari 
+php artisan make:model Hari_model 
+php artisan make:view hari\index

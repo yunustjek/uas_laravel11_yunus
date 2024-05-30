@@ -3,6 +3,7 @@
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\HariController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KurikulumController;
 use App\Http\Controllers\PelajaranController;
@@ -44,3 +45,5 @@ Route::resource('kurikulum', KurikulumController::class);
 Route::get('jadwal', [JadwalController::class, 'index'])->name('jadwal.index');
 
 Route::resource('perkiraan', PerkiraanController::class);
+
+Route::resource('hari', HariController::class);
