@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('perkiraan', function (Blueprint $table) {
-            $table->bigIncrements('PerkiraanID');
-            $table->string('NomorPerkiraan');
-            $table->string('NamaPerkiraan');
-            $table->string('Tipe');
+        Schema::create('tabel_akuntansi_master', function (Blueprint $table) {
+            $table->increments('id_perkiraan');
+            $table->string('nomor_perkiraan')->nullable();
+            $table->string('nama_perkiraan')->nullable();
+            $table->string('tipe')->nullable();
             $table->timestamps();
         });
     }
