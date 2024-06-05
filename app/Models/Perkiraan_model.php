@@ -11,6 +11,6 @@ class Perkiraan_model extends Model
     protected $table="tabel_akuntansi_master";
     protected $primaryKey="id_perkiraan";
 
-    public $timestamps = false;
+    //public $timestamps = false;
 
 }

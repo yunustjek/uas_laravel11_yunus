@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nomor_perkiraan')->nullable();
             $table->string('nama_perkiraan')->nullable();
             $table->string('tipe')->nullable();
+            $table->string('induk')->nullable();
             $table->timestamps();
         });
     }
