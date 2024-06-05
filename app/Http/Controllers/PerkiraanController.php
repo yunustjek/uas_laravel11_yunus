@@ -24,9 +24,9 @@ class PerkiraanController extends Controller
     public function store(Request $request)
     {
        $perkiraan = new Perkiraan_model();
-       $perkiraan->NomorPerkiraan = $request->NomorPerkiraan;
-       $perkiraan->NamaPerkiraan = $request->NamaPerkiraan;
-       $perkiraan->Tipe = $request->Tipe;
+       $perkiraan->nomor_perkiraan = $request->nomor_perkiraan;
+       $perkiraan->nama_perkiraan = $request->nama_perkiraan;
+       $perkiraan->tipe = $request->tipe;
        $perkiraan->save();
        return redirect('perkiraan'); 
     }
@@ -47,9 +47,9 @@ class PerkiraanController extends Controller
     public function update(Request $request, string $id)
     {
        $perkiraan = Perkiraan_model::find($id);
-       $perkiraan->NomorPerkiraan = $request->NomorPerkiraan;
-       $perkiraan->NamaPerkiraan = $request->NamaPerkiraan;
-       $perkiraan->Tipe = $request->Tipe;
+       $perkiraan->nomor_perkiraan = $request->nomor_perkiraan;
+       $perkiraan->nama_perkiraan = $request->nama_perkiraan;
+       $perkiraan->tipe = $request->tipe;
        $perkiraan->save();
        return redirect('perkiraan'); 
     }

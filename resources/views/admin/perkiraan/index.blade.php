@@ -18,18 +18,18 @@
     @foreach($perkiraan as $item)
 <tr>
     <td>{{ $loop->iteration }}</td>
-    <td>{{ $item->PerkiraanID }}</td>
-    <td>{{ $item->NamaPerkiraan  }}</td>
-    <td>{{ $item->Tipe }} </td>
+    <td>{{ $item->nomor_perkiraan }}</td>
+    <td>{{ $item->nama_perkiraan  }}</td>
+    <td>{{ $item->tipe }} </td>
     <td>
 
-    <button onclick="window.location='{{ route('perkiraan.edit', $item->PerkiraanID) }}'" type="button" class="btn btn-sm btn-warning" title="Edit Data">
+    <button onclick="window.location='{{ route('perkiraan.edit', $item->id_perkiraan) }}'" type="button" class="btn btn-sm btn-warning" title="Edit Data">
                 <i class="fas fa-edit"></i>
               </button>
 
               
 
-    <form onsubmit="return deleteData('{{ $item->PerkiraanID }}')" style="display: inline" method="POST"  action="{{ route('perkiraan.destroy', $item->PerkiraanID) }}">
+    <form onsubmit="return deleteData('{{ $item->id_perkiraan }}')" style="display: inline" method="POST"  action="{{ route('perkiraan.destroy', $item->id_perkiraan) }}">
                 @csrf
                 @method('DELETE')
                 <button  type="submit"  title="Hapus Data" class="btn btn-danger btn-sm">

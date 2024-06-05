@@ -20,14 +20,20 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item">
-                <a class="nav-link {{ request()->segment('1')=='' || request()->segment('1') == 'home' ? 'active' : '' }}" aria-current="page" href="{{ url('home') }}">
+                <a class="nav-link {{ request()->segment('1')=='' || request()->segment('1') == 'perkiraan' ? 'active' : '' }}" aria-current="page" href="{{ route('perkiraan.index') }}">
                 <i class="fas fa-tachometer-alt"></i> Home</a>
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link {{ request()->segment('1') =='perkiraan'  ? 'active' : '' }}" aria-current="page" href="{{ route('perkiraan.index') }}">
+                    <i class="fas fa-user"></i> Perkiraan</a>
+                    </li>
+
+                    <li class="nav-item">
                     <a class="nav-link {{ request()->segment('1') =='hari'  ? 'active' : '' }}" aria-current="page" href="{{ route('hari.index') }}">
                     <i class="fas fa-user"></i> Hari</a>
                     </li>
+    
     
                 
                 <li class="nav-item">
