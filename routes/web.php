@@ -48,13 +48,3 @@ Route::resource('perkiraan', PerkiraanController::class);
 
 Route::resource('hari', HariController::class);
 
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
