@@ -7,6 +7,7 @@ use App\Http\Controllers\HariController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KurikulumController;
 use App\Http\Controllers\PelajaranController;
+use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PerkiraanController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,11 @@ Route::resource('kurikulum', KurikulumController::class);
 Route::get('jadwal', [JadwalController::class, 'index'])->name('jadwal.index');
 
 Route::resource('perkiraan', PerkiraanController::class);
+Route::get('cetak_perkiraan', [PerkiraanController::class, 'cetak_perkiraan'])->name('cetak_perkiraan');
+
+
 
 Route::resource('hari', HariController::class);
+
+Route::resource('pengumuman', PengumumanController::class);
 

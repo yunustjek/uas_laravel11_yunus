@@ -1,33 +1,29 @@
 @extends('layout.main')
 @section('content')
+    
 
-<h1>Master Hari</h1>
-<a href="">Tambah Data</a>
-<div class="card">
-    <div class="card-header">
-        <a href="{{ route('hari.create') }}" class="btn btn-success btn-sm">Tambah Data</a>
-    </div>
-
-<div class="card-body">
-<table class="table table-sm table-stripped table-bordered">
+<h1>Master Data Pengumuman</h1>
+<a href="{{ route('pengumuman.create') }}" class="btn btn-danger btn-sm">Tambah Data</a>
+<table class="table">
     <tr>
-        <thead>
-        <td>No</td>
-        <td>Nama Hari</td>
-        {{-- <td>Icon</td> --}}
-        <td>Aksi</td>
+        <td scope="col">No</td>
+        <td scope="col">Judul</td>
+        <td scope="col">Isi Pengumuman</td>
+        <td scope="col">Tgl Posting</td>
+        <td scope="col">Aksi</td>
     </tr>
 </thead>
 <tbody>
-@foreach($hari as $item )
+    @foreach($pengumuman as $item)
     <tr>
         <td>{{ $loop->iteration }}</td>
-        <td>{{ $item->NamaHari }}</td>
-        {{-- <td><img src="{{ asset('storage/img/' . $item->img) }}" alt="" width="5%"></td> --}}
+        <td>{{ $item->judul }}</td>
+        <td>{{ $item->isi_pengumuman }}</td>
+        <td>{{ $item->tgl_posting }}</td>
         <td>
-            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('hari.destroy', $item->HariID) }}" method="POST">
-                <a href="{{ route('hari.show', $item->HariID) }}" class="btn btn-sm btn-dark">SHOW</a>
-                <a href="{{ route('hari.edit', $item->HariID) }}" class="btn btn-sm btn-primary">EDIT</a>
+            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('pengumuman.destroy', $item->id_pengumuman) }}" method="POST">
+                <a href="{{ route('pengumuman.show', $item->id_pengumuman) }}" class="btn btn-sm btn-dark">SHOW</a>
+                <a href="{{ route('pengumuman.edit', $item->id_pengumuman) }}" class="btn btn-sm btn-primary">EDIT</a>
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>

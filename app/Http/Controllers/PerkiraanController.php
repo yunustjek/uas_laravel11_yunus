@@ -60,4 +60,9 @@ class PerkiraanController extends Controller
         $perkiraan->delete();
         return redirect('perkiraan')->with(' berhasil');
     }
+
+    public function cetak_perkiraan(){
+        $perkiraan = Perkiraan_model::get();
+        return view('admin/perkiraan/cetak_perkiraan', compact('perkiraan'));
+    }
 }

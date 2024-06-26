@@ -52,6 +52,11 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link {{ request()->segment('1') =='pengumuman'  ? 'active' : '' }}" aria-current="page" href="{{ route('pengumuman.index') }}">
+                    <i class="fas fa-user"></i> Pengumuman</a>
+                    </li>
+
+                <li class="nav-item">
                 <a class="nav-link {{ request()->segment('1') =='jadwal'  ? 'active' : '' }}" aria-current="page" href="">
                 <i class="fas fa-user"></i> Logout</a>
                 </li>

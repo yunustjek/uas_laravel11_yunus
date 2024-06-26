@@ -3,6 +3,7 @@
 @section('content')
 <h1>Master Perkiaan</h1>
 <a class="btn btn-success btn-sm" href="{{ route('perkiraan.create') }}">Tambah Data</a>
+<a class="btn btn-danger btn-sm" href="{{ route('cetak_perkiraan') }}" target="_BLANK">Cetak Perkiraan</a>
 <table class="table table-sm table-stripped table-bordered">
 <thead>
     <tr>
