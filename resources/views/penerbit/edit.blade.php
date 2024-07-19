@@ -1,13 +1,18 @@
 @extends('layout.main2')
 @section('content')
 <h3>Edit Data</h3>
-<form action="{{ route('hari.update', $hari->HariID) }}" method="post">
+<form action="{{ route('penerbit.update', $penerbit->id_penerbit) }}" method="post">
     @csrf
     @method('put')
     <table>
         <tr>
-            <td>Nama Hari</td><td><input type="text" name="NamaHari" value="{{ $hari->NamaHari }}"></td>
+            <td>Nama Penerbit</td><td><input type="text" name="nama_penerbit" value="{{ $penerbit->nama_penerbit }}"></td>
         </tr>
+
+        <tr>
+            <td>Kota</td><td><input type="text" name="kota" value="{{ $penerbit->kota }}"></td>
+        </tr>
+
         <tr>
             <td>
                 <input type="submit" value="Simpan">

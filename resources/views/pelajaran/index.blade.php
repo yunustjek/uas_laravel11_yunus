@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layout.main2')
 @section('content')
 
 <h3>Data Siswa</h3>
@@ -17,7 +17,6 @@
     <thead>
         <tr>
             <th>No</th>
-          
             <th>Nama Pelajaran</th>
             <th>Alamat</th>
             <th>Aksi</th>            
